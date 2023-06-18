@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:software_design_study_flutter/database/database_driver.dart';
+import 'package:software_design_study_flutter/database/read_db_service.dart';
+import 'package:software_design_study_flutter/database/write_db_service.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +13,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // 入力・出力サービスクラスを生成
+    // 渡すのはどちらともDatabaseDriverクラスのインスタンス
+    DatabaseDriver databaseDriver = DatabaseDriver();
+
+    // 初期化時に、処理中に必要なメソッドが書いてあるインターフェースでそれぞれ受け取る
+    WriteDBService(databaseDriver);
+    ReadDBService(databaseDriver);
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
