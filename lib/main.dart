@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:software_design_study_flutter/fizz_buzz/fizz_buzz.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    FizzBuzz().runFizzBuzz();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
